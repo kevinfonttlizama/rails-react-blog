@@ -3,10 +3,12 @@
 
 <ul>
     <%@articles.each do |article| %>
+      <% unless article.archived? %>
         <li>
           <%= link_to article.title, article %>
         </li>
-    <%end%>
+      <% end %>
+    <% end %>
 </ul>
 
 <%= link_to "New article", new_article_path%>
